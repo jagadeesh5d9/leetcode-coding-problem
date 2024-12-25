@@ -15,12 +15,15 @@ public:
             for(int i:nums)
                 ans.push_back(i);
             return ans;
+            
+                //OR
+                // We can simply return the nums array...
         }
 
         int l=0,r=0;
         long long int sum=0;
         int div = (k*2)+1; // if that window available,then size becomes k*2+1 (i-k to i+k)
-        while(r<n-k){
+        while(r<n-k){ //Until last 'k' three digits..
             if(r-l+1 <= k){
                 ans.push_back(-1);
                 sum += nums[r];
