@@ -1,0 +1,69 @@
+424. Longest Repeating Character Replacement
+
+796_Rotate_String
+Longest Substring with K Uniques
+https://www.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1
+int longestKSubstr(string &s, int k) {
+        // your code here
+        int n = s.length();
+        int l=0,r=0;
+        unordered_map<char,int>map;
+        int ans = -1;
+        
+        int temp=0;
+        while(r<n){
+            if(temp ==0)
+                map[s[r]]++;    
+            
+            if(map.size() == k){
+                ans = max(ans,(r-l+1));
+                temp=0;
+                r++;
+            }else if(map.size() >k){
+                temp=1;
+                map[s[l]]--;
+                if(map[s[l]] == 0) 
+                    map.erase(s[l]);
+                l++;
+            }else{
+                temp=0;
+                r++;
+            }
+        }
+        return ans;
+    }
+
+    
+
+## 1456. Maximum Number of Vowels in a Substring of Given Length
+
+1423_Maximum_Points_You_Can_Obtain_from_Cards
+
+3_Longest_Substring_Without_Repeating_Characters
+
+int longestKSubstr(string &s, int k) {
+        // your code here
+        int n = s.length();
+        int l=0,r=0;
+        set<char>set;
+        int ans = -1;
+        
+        // int temp=0;
+        while(r<n){
+        
+            set.insert(s[r]);
+                
+            if(set.size() == k){
+                ans = max(ans,(r-l+1));
+                r++;
+            }else if(s.size() >k){
+                // temp=1;
+                set.erase(s[l]);
+                l++;
+            }else{
+                // temp=0;
+                r++;
+            }
+        }
+        return ans;
+    }
