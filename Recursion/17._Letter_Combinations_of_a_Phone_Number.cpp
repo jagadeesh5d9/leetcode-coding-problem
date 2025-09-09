@@ -42,3 +42,14 @@ public:
         return ans;
     }
 };
+
+Data look up:
+	automatically sets the value to the fields
+	db_u_priority.LIST - data loop up table.
+	Configure choice - add the new choice for the given field.
+
+	Custom Data lookUp setUp:
+		1:create custom fields
+		2:configuration values - "configure dictionary"
+		3:data loopUp Rule table creation:
+			it should extend the table called - "d_match"
