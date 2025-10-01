@@ -47,3 +47,7 @@ public:
         return true;
     }
 };
+
+Note:
+    we can also solve this problem without using priority queue
+    That is also same Time complexity but space complexity is O(n) where this is of O(n) for the vector...
